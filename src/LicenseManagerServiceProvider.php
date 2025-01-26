@@ -8,7 +8,7 @@ class LicenseManagerServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/license.php', 'license');
+        $this->mergeConfigFrom(__DIR__ . '/../config/license.php', 'license');
 
         $this->app->singleton(LicenseChecker::class, function ($app) {
             return new LicenseChecker();
