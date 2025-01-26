@@ -31,6 +31,6 @@ class LicenseChecker
             return true;
         }
 
-        return false;
+        throw new \Exception('License invalid or expired.');
     }
 }

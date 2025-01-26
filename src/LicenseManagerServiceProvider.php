@@ -19,9 +19,14 @@ class LicenseManagerServiceProvider extends ServiceProvider
     public function boot()
     {
         $licenseChecker = app(LicenseChecker::class);
-        if (!$licenseChecker->isLicenseValid()) {
-            echo "License invalid or expired. Command execution stopped.\n";
-            exit(1);
+        try {
+            if (!$licenseChecker->isLicenseValid()) {
+                echo 'License invalid or expired.';
+                exit;
+            }
+        }catch (\Exception $e) {
+            echo $e->getMessage();
+            exit;
         }
     }
 }
