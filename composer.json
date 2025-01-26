@@ -1,0 +1,35 @@
+{
+  "name": "sourceinja/license-manager",
+  "description": "we will check the license of our software which we write code for it",
+  "type": "library",
+  "authors": [
+    {
+      "name": "reza",
+      "email": "mr.rezakarimi99@gmail.com"
+    }
+  ],
+  "keywords": [
+    "sourceinja",
+    "register",
+    "module",
+    "license"
+  ],
+  "homepage": "https://sourceinja.ir",
+  "minimum-stability": "dev",
+  "require": {
+    "guzzlehttp/guzzle": "^7.7"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Sourceinja\\LicenseManager\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel" : {
+      "providers" : [
+        "Sourceinja\\LicenseManager\\LicenseManagerServiceProvider"
+      ]
+    }
+  }
+}
